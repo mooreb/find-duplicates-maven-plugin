@@ -15,9 +15,9 @@ def mayne():
 
 def build_file_list():
     magic_ls_num_bytes_column = 8
-    subprocess.call("find /Users/bmmoore/svn/btab_trunk -name \"*.java\" -ls > btab-trunk-java-files", shell=True)
-    subprocess.call("sort -n -k %s btab-trunk-java-files > btab-trunk-java-files.sort" % (magic_ls_num_bytes_column,), shell=True)
-    fp = open("btab-trunk-java-files.sort")
+    subprocess.call("find . -name \"*.java\" -ls > java-files", shell=True)
+    subprocess.call("sort -n -k %s java-files > java-files.sort" % (magic_ls_num_bytes_column,), shell=True)
+    fp = open("java-files.sort")
     file_lines = fp.readlines()
     return file_lines
 
